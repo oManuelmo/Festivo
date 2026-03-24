@@ -2,7 +2,8 @@
 CREATE TYPE user_role AS ENUM ('customer', 'professional');
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL UNIQUE,
+	name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     pass VARCHAR(255) NOT NULL,
     information TEXT,
